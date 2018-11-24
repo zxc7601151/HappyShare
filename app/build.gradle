@@ -1,0 +1,63 @@
+apply plugin: 'com.android.application'
+
+// 依赖库
+def library = rootProject.ext.dependencies
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.happy.share"
+        minSdkVersion 19
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    compileOptions {
+        /* Java8支持 */
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    /** android support **/
+    api "com.android.support.constraint:constraint-layout:$library.android_support_constraint_layout"
+    api "com.android.support:multidex:$library.android_support_multidex"
+    api "com.android.support:design:$library.android_support_design"
+    api "com.android.support:cardview-v7:$library.android_support_design"
+    api "com.android.support:customtabs:$library.android_support_design"
+
+    /* rx lifecycle 2 */
+    api "com.trello.rxlifecycle2:rxlifecycle:$library.rxlifecycle2"
+    api "com.trello.rxlifecycle2:rxlifecycle-android:$library.rxlifecycle2_android"
+    /* 网络请求 */
+    api "com.squareup.retrofit2:retrofit:$library.retrofit2"
+    api "org.ligboy.retrofit2:converter-fastjson-android:$library.retrofit2_converter_fastjson"
+    api "com.squareup.retrofit2:adapter-rxjava2:$library.retrofit2_adapter_rxjava2"
+    api "com.squareup.okhttp3:okhttp:$library.squareup_okhttp3"
+    // 动态权限库
+    api "pub.devrel:easypermissions:$library.permissions"
+    // fast json
+    api "com.alibaba:fastjson:$library.alibaba_fastjson"
+    //tab_indicator
+    api "com.github.hackware1993:MagicIndicator:$library.tab_indicator"
+    // stream 库
+    api "com.annimon:stream:$library.stream"
+    // Glide
+    api "com.github.bumptech.glide:glide:$library.glide"
+    //navigation-bar
+    api "com.ashokvarma.android:bottom-navigation-bar:$library.navigation_bar"
+    // 阿里七巧板控件
+    api("com.alibaba.android:vlayout:$library.alibaba_android_vlayout") {
+        transitive = true
+        exclude(group: 'com.android.support')
+    }
+
+}

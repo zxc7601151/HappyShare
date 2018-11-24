@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">HappyShare</string>
+    <string name="ok">Ok</string>
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
+    <string name="home">首页</string>
+    <string name="task">任务</string>
+    <string name="one_key_implant">一键植入</string>
+    <string name="advertising">推广</string>
+    <string name="mine">我的</string>
+
+    <string name="no_more_data">没有更多数据了</string>
+    <string name="load_failed" translatable="false">加载失败，点击重试</string>
+    <string name="tip_exit_system">再按一次退出应用!</string>
+</resources>

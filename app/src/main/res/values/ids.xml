@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- View点击最大间隔时间 -->
+    <item name="click_max_interval" type="id">false</item>
+
+    <!-- VLayout -->
+    <item name="key_delegate_adapter" type="id"/>
+    <item name="key_adapter_wrapper" type="id"/>
+</resources>
